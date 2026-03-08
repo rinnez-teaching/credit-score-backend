@@ -1,0 +1,102 @@
+{
+  "feature_names": [
+    "income",
+    "age",
+    "employment_years",
+    "loan_amount",
+    "loan_term",
+    "credit_history_length",
+    "num_credit_lines",
+    "num_delinquencies",
+    "debt_to_income_ratio",
+    "savings_balance",
+    "property_value",
+    "education_level",
+    "employment_type"
+  ],
+  "feature_count": 13,
+  "feature_descriptions": {
+    "income": {
+      "type": "float",
+      "description": "Annual income (USD)",
+      "min": 0,
+      "max": 500000
+    },
+    "age": {
+      "type": "int",
+      "description": "Age of applicant",
+      "min": 18,
+      "max": 80
+    },
+    "employment_years": {
+      "type": "int",
+      "description": "Years of employment",
+      "min": 0,
+      "max": 50
+    },
+    "loan_amount": {
+      "type": "float",
+      "description": "Requested loan amount (USD)",
+      "min": 0,
+      "max": 500000
+    },
+    "loan_term": {
+      "type": "int",
+      "description": "Loan term in months",
+      "min": 6,
+      "max": 120
+    },
+    "credit_history_length": {
+      "type": "int",
+      "description": "Credit history length (years)",
+      "min": 0,
+      "max": 50
+    },
+    "num_credit_lines": {
+      "type": "int",
+      "description": "Number of active credit lines",
+      "min": 0,
+      "max": 20
+    },
+    "num_delinquencies": {
+      "type": "int",
+      "description": "Number of past delinquencies",
+      "min": 0,
+      "max": 10
+    },
+    "debt_to_income_ratio": {
+      "type": "float",
+      "description": "Debt-to-income ratio (0-1)",
+      "min": 0.0,
+      "max": 1.0
+    },
+    "savings_balance": {
+      "type": "float",
+      "description": "Savings account balance (USD)",
+      "min": 0,
+      "max": 1000000
+    },
+    "property_value": {
+      "type": "float",
+      "description": "Property value (0 if none) (USD)",
+      "min": 0,
+      "max": 2000000
+    },
+    "education_level": {
+      "type": "int",
+      "description": "1=High School, 2=Bachelor, 3=Master, 4=PhD",
+      "min": 1,
+      "max": 4
+    },
+    "employment_type": {
+      "type": "int",
+      "description": "1=Full-time, 2=Part-time, 3=Self-employed",
+      "min": 1,
+      "max": 3
+    }
+  },
+  "model_metrics": {
+    "accuracy": 0.9,
+    "roc_auc": 0.9762
+  }
+}

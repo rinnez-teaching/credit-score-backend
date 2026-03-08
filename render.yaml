@@ -1,0 +1,38 @@
+# ============================================
+# Render.com Deployment Config
+# ============================================
+# File này giúp Render tự động cấu hình khi deploy
+# Docs: https://render.com/docs/yaml-spec
+# ============================================
+
+services:
+  - type: web
+    name: credit-score-api
+    runtime: python
+    region: singapore  # Chọn region gần Việt Nam
+    
+    # Build & Start
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    
+    # Instance (chọn 1)
+    plan: starter  # starter = $7/month, 1GB RAM | free = $0, 512MB RAM
+    
+    # Environment Variables
+    envVars:
+      - key: SUPABASE_URL
+        sync: false  # Phải set manual trên Render dashboard
+      - key: SUPABASE_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend.vercel.app
+      - key: MODEL_PATH
+        value: xgboost_model.json
+      - key: FEATURE_PATH
+        value: feature_names.json
+    
+    # Health Check
+    healthCheckPath: /health
+    
+    # Auto Deploy khi push code
+    autoDeploy: true
